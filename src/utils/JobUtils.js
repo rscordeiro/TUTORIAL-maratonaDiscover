@@ -6,7 +6,7 @@ module.exports = {
         const dueDate = createdDate.setDate(dueDay);
         const timeDiffInMs = dueDate - Date.now();
         const dayInMs = 1000 * 60 * 60 * 24;
-        const daysDiff = Math.floor(timeDiffInMs / dayInMs);
+        const daysDiff = Math.ceil(timeDiffInMs / dayInMs);
         return daysDiff;
     },
     calculateBudget: (job, valueHour) => valueHour * job["total-hours"]
